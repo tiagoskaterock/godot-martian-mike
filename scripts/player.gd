@@ -15,6 +15,7 @@ func _physics_process(delta):
 
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		$Jump.play()
 		velocity.y = JUMP_VELOCITY
 		
 		
@@ -28,13 +29,20 @@ func handle_direction():
 	set_sprite_animation(direction)
 
 
-func set_sprite_animation(direction):
-	if direction == 1:
+func set_sprite_animation(direction) -> void:
+	# on floor
+	if direction == 1 and is_on_floor():
 		$AnimatedSprite2D.play("run")
-	if direction == -1:
+	elif direction == -1 and is_on_floor():
 		$AnimatedSprite2D.play("run")
-	if direction == 0:
+	elif direction == 0 and is_on_floor():
 		$AnimatedSprite2D.play("idle")
+		
+	#off the floor
+	if velocity.y < 0 and ! is_on_floor():
+		$AnimatedSprite2D.play("jump")
+	if velocity.y >= 0 and ! is_on_floor():
+		$AnimatedSprite2D.play("fall")
 
 
 func set_sprite_direction(direction):
@@ -42,10 +50,6 @@ func set_sprite_direction(direction):
 		$AnimatedSprite2D.flip_h = false
 	if direction == -1:
 		$AnimatedSprite2D.flip_h = true
-	if velocity.y < 0 and ! is_on_floor():
-		$AnimatedSprite2D.play("jump")
-	if velocity.y >= 0 and ! is_on_floor():
-		$AnimatedSprite2D.play("fall") 
 
 
 func add_gravity(delta):

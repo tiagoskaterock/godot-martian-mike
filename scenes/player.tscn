@@ -1,10 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://cblh287h671ue"]
+[gd_scene load_steps=33 format=3 uid="uid://cblh287h671ue"]
 
 [ext_resource type="Texture2D" uid="uid://di5qgjix0hijk" path="res://assets/textures/player/Fall (32x32).png" id="1_r54il"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uikpt"]
 [ext_resource type="Texture2D" uid="uid://b7s22auyaf4ot" path="res://assets/textures/player/Idle (32x32).png" id="2_e5g3j"]
 [ext_resource type="Texture2D" uid="uid://dme84p3ixbtn2" path="res://assets/textures/player/Jump (32x32).png" id="3_3cxs8"]
 [ext_resource type="Texture2D" uid="uid://c4i0o5y8cxwkt" path="res://assets/textures/player/Run (32x32).png" id="4_kgc7p"]
+[ext_resource type="PackedScene" uid="uid://rfayflmrkkxg" path="res://scenes/jump.tscn" id="6_qc7j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmbeh"]
 size = Vector2(16, 24)
@@ -217,3 +218,6 @@ autoplay = "idle"
 frame_progress = 0.907701
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Jump" parent="." instance=ExtResource("6_qc7j4")]
+autoplay = false
