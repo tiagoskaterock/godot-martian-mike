@@ -205,7 +205,9 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_uikpt")
+metadata/_edit_vertical_guides_ = []
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
@@ -218,6 +220,7 @@ autoplay = "idle"
 frame_progress = 0.907701
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 150
 
 [node name="Jump" parent="." instance=ExtResource("6_qc7j4")]
 autoplay = false

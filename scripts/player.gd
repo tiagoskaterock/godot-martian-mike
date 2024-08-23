@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
@@ -55,3 +57,7 @@ func set_sprite_direction(direction):
 func add_gravity(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+
+func back_to_start_position():
+	position = get_parent().get_node("StartPosition").position
