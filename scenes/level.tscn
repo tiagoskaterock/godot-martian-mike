@@ -14,7 +14,9 @@ script = ExtResource("1_qpfpe")
 position = Vector2(192, 16)
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2(200, 184)
+position = Vector2(232, 432)
+scale = Vector2(4.69924, 4.69924)
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture = ExtResource("3_vl8iw")
