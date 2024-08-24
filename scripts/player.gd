@@ -17,9 +17,13 @@ func _physics_process(delta):
 
 func handle_jump():
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		$Jump.play()
-		velocity.y = JUMP_VELOCITY
+		jump(1)	
 		
+		
+func jump(jump_power):
+	$Jump.play()
+	velocity.y = JUMP_VELOCITY * jump_power
+	
 		
 func handle_direction():		
 	var direction = Input.get_axis("left", "right")	
