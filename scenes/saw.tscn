@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsp7clb7m0vk8"]
+[gd_scene load_steps=16 format=3 uid="uid://dsp7clb7m0vk8"]
 
 [ext_resource type="Texture2D" uid="uid://d4cc6bbpurgsp" path="res://assets/textures/other/Saw.png" id="1_1ead1"]
 [ext_resource type="Script" path="res://scripts/saw.gd" id="1_n1xq8"]
@@ -70,16 +70,62 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_h5oug"]
 radius = 17.0
 
-[node name="Saw" type="Area2D"]
-collision_layer = 32
+[sub_resource type="Animation" id="Animation_n38ck"]
+resource_name = "default"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -150), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wwr8q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oix5s"]
+_data = {
+"RESET": SubResource("Animation_wwr8q"),
+"default": SubResource("Animation_n38ck")
+}
+
+[node name="Saw" type="Node2D"]
 script = ExtResource("1_n1xq8")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
 sprite_frames = SubResource("SpriteFrames_j54ob")
 autoplay = "default"
 frame_progress = 0.520583
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_h5oug")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_oix5s")
+}
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
