@@ -71,6 +71,8 @@ select={
 2d_physics/layer_1="player"
 2d_physics/layer_2="floor"
 2d_physics/layer_3="jump_pad"
+2d_physics/layer_4="spiked_ball"
+2d_physics/layer_5="death_zone"
 
 [rendering]
 
