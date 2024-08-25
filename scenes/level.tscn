@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1pilkugbg64k"]
+[gd_scene load_steps=10 format=3 uid="uid://c1pilkugbg64k"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qpfpe"]
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="2_5tiiv"]
 [ext_resource type="PackedScene" uid="uid://cca0828jaoaj3" path="res://scenes/death_zone.tscn" id="2_8e3bn"]
 [ext_resource type="Texture2D" uid="uid://cwsc3a5rck6mc" path="res://icon.svg" id="3_vl8iw"]
+[ext_resource type="Script" path="res://scripts/StartPosition.gd" id="5_0sfjk"]
 [ext_resource type="PackedScene" uid="uid://cn15k1avukpxc" path="res://scenes/jump_pad.tscn" id="5_ybdj3"]
 [ext_resource type="PackedScene" uid="uid://car1vkasv22e2" path="res://scenes/spiked_ball.tscn" id="6_mqmlr"]
+[ext_resource type="PackedScene" uid="uid://dsp7clb7m0vk8" path="res://scenes/saw.tscn" id="7_lyxt1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4bv01"]
 size = Vector2(128, 126)
@@ -17,7 +19,7 @@ script = ExtResource("1_qpfpe")
 position = Vector2(-43, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_5tiiv")]
-position = Vector2(192, 16)
+position = Vector2(94, 107)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(232, 432)
@@ -34,9 +36,13 @@ shape = SubResource("RectangleShape2D_4bv01")
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(224, 80)
+script = ExtResource("5_0sfjk")
 
 [node name="JumpPad" parent="." instance=ExtResource("5_ybdj3")]
-position = Vector2(104, 117)
+position = Vector2(221, 118)
 
 [node name="SpikedBall" parent="." instance=ExtResource("6_mqmlr")]
 position = Vector2(456, 118)
+
+[node name="Saw" parent="." instance=ExtResource("7_lyxt1")]
+position = Vector2(339, 113)
