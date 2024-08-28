@@ -3,14 +3,14 @@
 [ext_resource type="Script" path="res://scripts/death_zone.gd" id="1_shkcy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xf4bf"]
-size = Vector2(1040, 48)
+size = Vector2(12664, 32)
 
 [node name="DeathZone" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_shkcy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(264, 288)
+position = Vector2(4, 248)
 shape = SubResource("RectangleShape2D_xf4bf")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
