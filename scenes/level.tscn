@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="2_5tiiv"]
 [ext_resource type="PackedScene" uid="uid://cca0828jaoaj3" path="res://scenes/death_zone.tscn" id="2_8e3bn"]
 [ext_resource type="Texture2D" uid="uid://c3c8rhk7277wf" path="res://assets/textures/bg/Pink.png" id="3_8b3eb"]
-[ext_resource type="Script" path="res://scripts/StartPosition.gd" id="5_0sfjk"]
 [ext_resource type="PackedScene" uid="uid://car1vkasv22e2" path="res://scenes/spiked_ball.tscn" id="6_mqmlr"]
 [ext_resource type="PackedScene" uid="uid://dsp7clb7m0vk8" path="res://scenes/saw.tscn" id="7_lyxt1"]
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="8_yd53a"]
 [ext_resource type="AudioStream" uid="uid://cr20eiu1jss0f" path="res://assets/music/mixkit-goin-back-to-alabama-830.mp3" id="9_d8pxv"]
+[ext_resource type="PackedScene" uid="uid://bfyb8ckdehsxe" path="res://scenes/start.tscn" id="11_4aej3"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qpfpe")
@@ -20,12 +20,11 @@ bg_texture = ExtResource("3_8b3eb")
 [node name="DeathZone" parent="." instance=ExtResource("2_8e3bn")]
 position = Vector2(-43, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_5tiiv")]
-position = Vector2(94, 107)
+[node name="Start" parent="." instance=ExtResource("11_4aej3")]
+position = Vector2(81, 89)
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(224, 80)
-script = ExtResource("5_0sfjk")
+[node name="Player" parent="." instance=ExtResource("2_5tiiv")]
+position = Vector2(95, 83)
 
 [node name="TileMap" parent="." instance=ExtResource("8_yd53a")]
 position = Vector2(81.4429, 168.615)

@@ -64,7 +64,7 @@ func add_gravity(delta):
 
 
 func back_to_start_position():
-	position = get_parent().get_node("StartPosition").position
+	position = get_parent().get_node("Start").position
 
 
 func die():
