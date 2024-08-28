@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1pilkugbg64k"]
+[gd_scene load_steps=11 format=3 uid="uid://c1pilkugbg64k"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qpfpe"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_4ce4p"]
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="2_5tiiv"]
 [ext_resource type="PackedScene" uid="uid://cca0828jaoaj3" path="res://scenes/death_zone.tscn" id="2_8e3bn"]
+[ext_resource type="Texture2D" uid="uid://c3c8rhk7277wf" path="res://assets/textures/bg/Pink.png" id="3_8b3eb"]
 [ext_resource type="Script" path="res://scripts/StartPosition.gd" id="5_0sfjk"]
 [ext_resource type="PackedScene" uid="uid://car1vkasv22e2" path="res://scenes/spiked_ball.tscn" id="6_mqmlr"]
 [ext_resource type="PackedScene" uid="uid://dsp7clb7m0vk8" path="res://scenes/saw.tscn" id="7_lyxt1"]
@@ -14,6 +15,7 @@
 script = ExtResource("1_qpfpe")
 
 [node name="BG" parent="." instance=ExtResource("2_4ce4p")]
+bg_texture = ExtResource("3_8b3eb")
 
 [node name="DeathZone" parent="." instance=ExtResource("2_8e3bn")]
 position = Vector2(-43, 0)
