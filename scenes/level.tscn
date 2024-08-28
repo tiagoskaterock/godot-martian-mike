@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1pilkugbg64k"]
+[gd_scene load_steps=12 format=3 uid="uid://c1pilkugbg64k"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qpfpe"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_4ce4p"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="8_yd53a"]
 [ext_resource type="AudioStream" uid="uid://cr20eiu1jss0f" path="res://assets/music/mixkit-goin-back-to-alabama-830.mp3" id="9_d8pxv"]
 [ext_resource type="PackedScene" uid="uid://bfyb8ckdehsxe" path="res://scenes/start.tscn" id="11_4aej3"]
+[ext_resource type="PackedScene" uid="uid://ur5k5wp2qufo" path="res://scenes/finish.tscn" id="11_hvpfq"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qpfpe")
@@ -22,6 +23,12 @@ position = Vector2(-43, 0)
 
 [node name="Start" parent="." instance=ExtResource("11_4aej3")]
 position = Vector2(81, 89)
+
+[node name="Finish" parent="." instance=ExtResource("11_hvpfq")]
+position = Vector2(3329, 90)
+
+[node name="Finish2" parent="." instance=ExtResource("11_hvpfq")]
+position = Vector2(287, 89)
 
 [node name="Player" parent="." instance=ExtResource("2_5tiiv")]
 position = Vector2(95, 83)

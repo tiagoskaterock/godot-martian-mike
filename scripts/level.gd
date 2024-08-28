@@ -14,3 +14,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("start"):
 		print('Reload')
 		get_tree().reload_current_scene()
+		
+		
+func stop_song():
+	$BGSong.stop()

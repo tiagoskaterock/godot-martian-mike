@@ -7,7 +7,6 @@ const JUMP_VELOCITY = -400.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-
 func _physics_process(delta):	
 	add_gravity(delta)
 	handle_jump()
@@ -68,5 +67,16 @@ func back_to_start_position():
 
 
 func die():
+	scream()
 	back_to_start_position()
+	
+	
+func scream():	
+	var scream = preload("res://scenes/scream.tscn").instantiate()
+	get_parent().add_child(scream)
+	
+	
+func happy():
+	$Happy.play()
+	
 	
