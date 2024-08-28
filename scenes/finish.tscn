@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://ur5k5wp2qufo"]
+[gd_scene load_steps=15 format=3 uid="uid://ur5k5wp2qufo"]
 
 [ext_resource type="Texture2D" uid="uid://boaf50hk1uu0a" path="res://assets/textures/other/End (Pressed) (64x64).png" id="1_lvrly"]
 [ext_resource type="Script" path="res://scripts/finish.gd" id="1_qa7ic"]
 [ext_resource type="Texture2D" uid="uid://2v2p8b0ov016" path="res://assets/textures/other/End (Idle).png" id="2_wxddp"]
+[ext_resource type="PackedScene" uid="uid://bmh07b8vnhn7y" path="res://scenes/happy.tscn" id="4_pqxav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yec0"]
 atlas = ExtResource("1_lvrly")
@@ -82,13 +83,16 @@ size = Vector2(32, 35)
 [node name="Finish" type="Area2D"]
 script = ExtResource("1_qa7ic")
 
-[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_4437h")
 animation = &"end"
-frame_progress = 0.113704
+frame_progress = 0.204898
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 14.5)
 shape = SubResource("RectangleShape2D_2hu5y")
 
+[node name="Happy" parent="." instance=ExtResource("4_pqxav")]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="finished" from="Happy" to="." method="_on_happy_finished"]

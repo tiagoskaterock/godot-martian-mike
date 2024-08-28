@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmh07b8vnhn7y"]
+
+[ext_resource type="AudioStream" uid="uid://bxl24kcdbjnve" path="res://assets/audio/happy-logo.mp3" id="1_v4t0p"]
+
+[node name="Happy" type="AudioStreamPlayer"]
+stream = ExtResource("1_v4t0p")
