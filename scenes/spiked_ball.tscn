@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://car1vkasv22e2"]
+[gd_scene load_steps=8 format=3 uid="uid://car1vkasv22e2"]
 
 [ext_resource type="Texture2D" uid="uid://cinfrqd4b03fw" path="res://assets/textures/other/Spiked Ball.png" id="1_0bvm7"]
 [ext_resource type="Script" path="res://scripts/spiked_ball.gd" id="1_nilvg"]
+[ext_resource type="AudioStream" uid="uid://m86630fc1gm5" path="res://assets/audio/movement-101711.mp3" id="3_64k7x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yr0x"]
 
@@ -108,5 +109,13 @@ autoplay = "default"
 libraries = {
 "": SubResource("AnimationLibrary_g3w7c")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_64k7x")
+volume_db = 16.092
+pitch_scale = 1.77
+autoplay = true
+max_distance = 200.0
+attenuation = 1.03527
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
