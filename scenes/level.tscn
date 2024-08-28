@@ -25,10 +25,7 @@ position = Vector2(-43, 0)
 position = Vector2(81, 89)
 
 [node name="Finish" parent="." instance=ExtResource("11_hvpfq")]
-position = Vector2(3329, 90)
-
-[node name="Finish2" parent="." instance=ExtResource("11_hvpfq")]
-position = Vector2(287, 89)
+position = Vector2(3300, 89)
 
 [node name="Player" parent="." instance=ExtResource("2_5tiiv")]
 position = Vector2(95, 83)
