@@ -6,11 +6,13 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var can_move : bool = true
 
-func _physics_process(delta):	
+func _physics_process(delta):
 	add_gravity(delta)
-	handle_jump()
-	handle_direction()
+	if can_move:
+		handle_jump()
+		handle_direction()
 	move_and_slide()
 	
 
@@ -25,7 +27,7 @@ func jump(jump_power):
 	
 		
 func handle_direction():		
-	var direction = Input.get_axis("left", "right")	
+	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -79,4 +81,9 @@ func scream():
 func happy():
 	$Happy.play()
 	
+	
+func stop():
+	can_move = false
+	velocity.x = 0
+	$AnimatedSprite2D.play("idle")
 	
