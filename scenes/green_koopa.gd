@@ -23,7 +23,6 @@ func handle_gravity(delta):
 		
 func handle_horizontal_movement(delta):
 	if is_on_wall():
-		print('wall')
 		direction = - direction
 	if direction:
 		velocity.x = direction * speed

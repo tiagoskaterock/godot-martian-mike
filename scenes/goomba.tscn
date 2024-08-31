@@ -28,7 +28,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3j2a"]
-size = Vector2(22, 22)
+size = Vector2(22, 27)
 
 [node name="Goomba" type="CharacterBody2D"]
 collision_layer = 128
@@ -39,8 +39,9 @@ direction = 1
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.179688, 0.179688)
 sprite_frames = SubResource("SpriteFrames_l8bk8")
-animation = &"stomped"
+animation = &"walk"
 autoplay = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_o3j2a")
