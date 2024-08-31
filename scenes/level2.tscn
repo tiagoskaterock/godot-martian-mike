@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3u0l3kcuwori"]
+[gd_scene load_steps=14 format=3 uid="uid://d3u0l3kcuwori"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vxc81"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_j4fdg"]
@@ -10,7 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="9_kv0eb"]
 [ext_resource type="AudioStream" uid="uid://cqygl70nkfara" path="res://assets/music/no-copyright-background-musicfree-music-for-youtube-videos-181899.mp3" id="10_y0r64"]
 [ext_resource type="PackedScene" uid="uid://be6viqivpy3sa" path="res://scenes/goomba.tscn" id="11_ew740"]
-[ext_resource type="PackedScene" uid="uid://vl4tlduwviev" path="res://scenes/green_koopa.tscn" id="11_op78b"]
+[ext_resource type="PackedScene" uid="uid://ddytrdx8akkqr" path="res://scenes/green_koopa.tscn" id="11_op78b"]
+[ext_resource type="PackedScene" uid="uid://oqndiiv1qfvj" path="res://scenes/level_timer.tscn" id="12_5flx2"]
 
 [sub_resource type="PackedScene" id="PackedScene_irsjq"]
 _bundled = {
@@ -38,7 +39,7 @@ position = Vector2(-43, 0)
 position = Vector2(83, 105)
 
 [node name="Finish" parent="." instance=ExtResource("6_x6ijw")]
-position = Vector2(3300, 89)
+position = Vector2(267, 105)
 next_stage = SubResource("PackedScene_irsjq")
 
 [node name="Player" parent="." instance=ExtResource("8_8skx4")]
@@ -63,3 +64,6 @@ position = Vector2(492, 34)
 
 [node name="GreenKoopa2" parent="." instance=ExtResource("11_op78b")]
 position = Vector2(174, 22)
+
+[node name="LevelTimer" parent="." instance=ExtResource("12_5flx2")]
+start_time_in_seconds = 10

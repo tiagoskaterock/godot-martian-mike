@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://vl4tlduwviev"]
+[gd_scene load_steps=5 format=3 uid="uid://ddytrdx8akkqr"]
 
 [ext_resource type="Texture2D" uid="uid://cwsc3a5rck6mc" path="res://icon.svg" id="1_4njdd"]
-[ext_resource type="Script" path="res://scenes/green_koopa.gd" id="1_6mqfx"]
+[ext_resource type="Script" path="res://scripts/green_koopa.gd" id="1_p8hk6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yyi6d"]
 animations = [{
@@ -21,7 +21,7 @@ size = Vector2(18.6667, 18.6667)
 scale = Vector2(2, 2)
 collision_layer = 128
 collision_mask = 131
-script = ExtResource("1_6mqfx")
+script = ExtResource("1_p8hk6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.68221e-07, -5.06639e-07)

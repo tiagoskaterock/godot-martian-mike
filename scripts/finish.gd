@@ -6,6 +6,7 @@ extends Area2D
 
 func _on_body_entered(body):
 	if body is Player:
+		get_parent().get_node('LevelTimer').stop()
 		body.stop()
 		$Happy.play()
 		get_parent().stop_song()
@@ -17,6 +18,6 @@ func _on_happy_finished():
 	next_scene()
 
 
-func next_scene():
+func next_scene() -> void:
 	get_tree().change_scene_to_packed(next_stage)
 	print(next_stage)
