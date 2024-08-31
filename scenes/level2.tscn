@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bp2pg0rup3aqr"]
+[gd_scene load_steps=12 format=3 uid="uid://d3u0l3kcuwori"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vxc81"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_j4fdg"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="8_8skx4"]
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="9_kv0eb"]
 [ext_resource type="AudioStream" uid="uid://cqygl70nkfara" path="res://assets/music/no-copyright-background-musicfree-music-for-youtube-videos-181899.mp3" id="10_y0r64"]
-[ext_resource type="PackedScene" uid="uid://gouad4c83lvl" path="res://scenes/enemy.tscn" id="11_ew740"]
+[ext_resource type="PackedScene" uid="uid://be6viqivpy3sa" path="res://scenes/goomba.tscn" id="11_ew740"]
 
 [sub_resource type="PackedScene" id="PackedScene_irsjq"]
 _bundled = {
@@ -51,6 +51,14 @@ layer_0/tile_data = PackedInt32Array(-5, 851968, 6, -4, 917504, 6, -3, 851968, 6
 stream = ExtResource("10_y0r64")
 volume_db = -10.024
 
-[node name="Enemy" parent="." instance=ExtResource("11_ew740")]
-position = Vector2(306, 12)
-direction = -1
+[node name="Goomba" parent="." instance=ExtResource("11_ew740")]
+position = Vector2(264, 68)
+
+[node name="Goomba2" parent="." instance=ExtResource("11_ew740")]
+position = Vector2(190, 105)
+
+[node name="Goomba3" parent="." instance=ExtResource("11_ew740")]
+position = Vector2(107, 40)
+
+[node name="Goomba4" parent="." instance=ExtResource("11_ew740")]
+position = Vector2(201, 10)

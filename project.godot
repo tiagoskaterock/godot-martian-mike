@@ -75,7 +75,7 @@ select={
 2d_physics/layer_5="death_zone"
 2d_physics/layer_6="saw"
 2d_physics/layer_7="start"
-2d_physics/layer_8="enemy"
+2d_physics/layer_8="goomba"
 
 [rendering]
 
