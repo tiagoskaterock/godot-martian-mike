@@ -59,7 +59,3 @@ autoplay = true
 
 [node name="LevelTimer" parent="." instance=ExtResource("14_5cg8h")]
 start_time_in_seconds = 35
-
-[node name="Finish2" parent="." instance=ExtResource("11_hvpfq")]
-position = Vector2(346, 89)
-next_stage = ExtResource("7_k3a0n")

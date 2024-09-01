@@ -52,6 +52,7 @@ layer_0/tile_data = PackedInt32Array(-5, 851968, 6, -4, 917504, 6, -3, 851968, 6
 [node name="BGSong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_y0r64")
 volume_db = -10.024
+autoplay = true
 
 [node name="Goomba5" parent="." instance=ExtResource("11_ew740")]
 position = Vector2(488, -25)
