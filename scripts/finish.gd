@@ -11,13 +11,16 @@ func _on_body_entered(body):
 		$Happy.play()
 		get_parent().stop_song()
 		$AnimatedSprite2D.play("end")
+		show_win_screen()
 
 
-func _on_happy_finished():
+func _on_happy_finished() -> void:
 	$AnimatedSprite2D.play("idle")
-	next_scene()
 
 
 func next_scene() -> void:
 	get_tree().change_scene_to_packed(next_stage)
-	print(next_stage)
+	
+	
+func show_win_screen() -> void:
+	get_parent().get_node("UILayer").show_win_screen()

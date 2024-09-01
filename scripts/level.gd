@@ -3,7 +3,7 @@ extends Node2D
 var timer_node = null
 
 
-func _process(delta):	
+func _process(delta):
 	if Input.is_action_just_pressed("select"):
 		print('Quit')
 		get_tree().quit()
@@ -12,6 +12,6 @@ func _process(delta):
 		get_tree().reload_current_scene()
 		
 		
-func stop_song():
+func stop_song() -> void:
 	$BGSong.stop()
 	
