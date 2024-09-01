@@ -4,12 +4,13 @@ extends Timer
 var time_in_seconds : int
 
 
-func _ready():
+func _ready():	
 	start_counter()
+	update_time_on_hud()
 
 
 func _on_timeout():
-	print(time_in_seconds)
+	update_time_on_hud()
 	decrement_second()
 	if is_there_time():
 		kill_player()
@@ -31,4 +32,8 @@ func decrement_second() -> void:
 func kill_player() -> void:
 	get_parent().get_node('Player').die()
 	
+	
+func update_time_on_hud() -> void:
+	var hud = get_parent().get_node("UILayer").get_node("Hud")
+	hud.set_time_label(time_in_seconds)
 	

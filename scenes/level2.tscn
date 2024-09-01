@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3u0l3kcuwori"]
+[gd_scene load_steps=14 format=3 uid="uid://d3u0l3kcuwori"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_vxc81"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_j4fdg"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://cqygl70nkfara" path="res://assets/music/no-copyright-background-musicfree-music-for-youtube-videos-181899.mp3" id="10_y0r64"]
 [ext_resource type="PackedScene" uid="uid://be6viqivpy3sa" path="res://scenes/goomba.tscn" id="11_ew740"]
 [ext_resource type="PackedScene" uid="uid://oqndiiv1qfvj" path="res://scenes/level_timer.tscn" id="12_5flx2"]
+[ext_resource type="PackedScene" uid="uid://3lp01l3dbbsv" path="res://scenes/ui_layer.tscn" id="12_rg6ui"]
 
 [sub_resource type="PackedScene" id="PackedScene_irsjq"]
 _bundled = {
@@ -66,3 +67,5 @@ position = Vector2(756, -14)
 
 [node name="LevelTimer" parent="." instance=ExtResource("12_5flx2")]
 start_time_in_seconds = 60
+
+[node name="UILayer" parent="." instance=ExtResource("12_rg6ui")]
