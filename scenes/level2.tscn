@@ -6,25 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cca0828jaoaj3" path="res://scenes/death_zone.tscn" id="4_ft2li"]
 [ext_resource type="PackedScene" uid="uid://bfyb8ckdehsxe" path="res://scenes/start.tscn" id="5_3thlw"]
 [ext_resource type="PackedScene" uid="uid://ur5k5wp2qufo" path="res://scenes/finish.tscn" id="6_x6ijw"]
+[ext_resource type="PackedScene" uid="uid://en2tlfasex5d" path="res://scenes/title_screen.tscn" id="7_beox6"]
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="8_8skx4"]
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="9_kv0eb"]
 [ext_resource type="AudioStream" uid="uid://cqygl70nkfara" path="res://assets/music/no-copyright-background-musicfree-music-for-youtube-videos-181899.mp3" id="10_y0r64"]
 [ext_resource type="PackedScene" uid="uid://be6viqivpy3sa" path="res://scenes/goomba.tscn" id="11_ew740"]
 [ext_resource type="PackedScene" uid="uid://oqndiiv1qfvj" path="res://scenes/level_timer.tscn" id="12_5flx2"]
 [ext_resource type="PackedScene" uid="uid://3lp01l3dbbsv" path="res://scenes/ui_layer.tscn" id="12_rg6ui"]
-
-[sub_resource type="PackedScene" id="PackedScene_irsjq"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Level2", "Node2D"),
-"node_count": 1,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0),
-"variants": [],
-"version": 3
-}
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_vxc81")
@@ -40,7 +28,7 @@ position = Vector2(83, 105)
 
 [node name="Finish" parent="." instance=ExtResource("6_x6ijw")]
 position = Vector2(1019, 105)
-next_stage = SubResource("PackedScene_irsjq")
+next_stage = ExtResource("7_beox6")
 
 [node name="Player" parent="." instance=ExtResource("8_8skx4")]
 position = Vector2(95, 83)
