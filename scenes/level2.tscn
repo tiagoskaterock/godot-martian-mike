@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cca0828jaoaj3" path="res://scenes/death_zone.tscn" id="4_ft2li"]
 [ext_resource type="PackedScene" uid="uid://bfyb8ckdehsxe" path="res://scenes/start.tscn" id="5_3thlw"]
 [ext_resource type="PackedScene" uid="uid://ur5k5wp2qufo" path="res://scenes/finish.tscn" id="6_x6ijw"]
-[ext_resource type="PackedScene" uid="uid://en2tlfasex5d" path="res://scenes/title_screen.tscn" id="7_beox6"]
+[ext_resource type="PackedScene" uid="uid://cmlx20jrjikkj" path="res://scenes/level3.tscn" id="7_iyaqm"]
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="8_8skx4"]
 [ext_resource type="PackedScene" uid="uid://cdmngmqsnchki" path="res://scenes/tile_map.tscn" id="9_kv0eb"]
 [ext_resource type="AudioStream" uid="uid://cqygl70nkfara" path="res://assets/music/no-copyright-background-musicfree-music-for-youtube-videos-181899.mp3" id="10_y0r64"]
@@ -28,7 +28,7 @@ position = Vector2(83, 105)
 
 [node name="Finish" parent="." instance=ExtResource("6_x6ijw")]
 position = Vector2(1019, 105)
-next_stage = ExtResource("7_beox6")
+next_stage = ExtResource("7_iyaqm")
 
 [node name="Player" parent="." instance=ExtResource("8_8skx4")]
 position = Vector2(95, 83)
