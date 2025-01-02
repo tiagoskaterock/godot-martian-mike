@@ -68,9 +68,11 @@ func add_gravity(delta):
 
 func back_to_start_position():
 	position = get_parent().get_node("Start").position
+	print(get_parent())
 
 
 func die():
+	get_parent().get_node("LevelTimer").start_counter()
 	scream()
 	back_to_start_position()
 	

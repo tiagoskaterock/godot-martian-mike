@@ -32,7 +32,7 @@ layer_0/tile_data = PackedInt32Array(-65537, 458752, 4, -131072, 458752, 4, -655
 [node name="Player" parent="." instance=ExtResource("8_t2yuu")]
 position = Vector2(51, 26)
 
-[node name="Camera2D" parent="Player" index="2"]
+[node name="Camera2D" parent="Player" index="3"]
 limit_left = 0
 limit_top = 50
 limit_right = 500

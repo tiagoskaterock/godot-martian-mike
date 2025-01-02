@@ -206,7 +206,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(1.5, 1.5)
 collision_mask = 126
 script = ExtResource("1_uikpt")
 metadata/_edit_vertical_guides_ = []
@@ -216,13 +215,13 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_rmbeh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-1.5, 5)
 scale = Vector2(0.0305556, 0.0305556)
 texture = ExtResource("2_jvb1w")
 flip_h = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
 sprite_frames = SubResource("SpriteFrames_misqj")
 animation = &"run"
 autoplay = "idle"
