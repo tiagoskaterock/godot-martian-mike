@@ -6,6 +6,8 @@
 
 Bem-vindo ao **Martian Mike**, um jogo de plataforma emocionante desenvolvido com o motor [Godot Engine](https://godotengine.org). Controle Mike, um marciano corajoso, em uma jornada épica por mundos alienígenas, enfrentando inimigos perigosos, superando obstáculos e coletando tesouros perdidos!
 
+<img src="preview/1.png" alt="Game preview" />
+
 ## 🎮 Visão Geral do Jogo
 
 Martian Mike é um jogo 2D de plataforma em que os jogadores embarcam em uma aventura por vários níveis cheios de desafios. O jogo combina elementos de exploração, puzzles e ação, oferecendo uma experiência divertida e envolvente.
