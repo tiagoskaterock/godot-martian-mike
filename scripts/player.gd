@@ -2,11 +2,16 @@ extends CharacterBody2D
 
 class_name Player
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const SPEED : float = 200.0
+const JUMP_VELOCITY : float = -300.0
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move : bool = true
+var jump_force : float = .8
+var is_falling : bool = true
+var height_in_the_air : int = 0
+var jump_max_height : int = 13
+const coyote_jump_tolerance : int = 50
 
 func _physics_process(delta):
 	add_gravity(delta)
@@ -17,12 +22,30 @@ func _physics_process(delta):
 	
 
 func handle_jump():
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		jump(1)	
+	if Input.is_action_pressed("jump") and is_on_floor() and ! is_falling:
+		$Jump.play()
+		jump(jump_force)
+		height_in_the_air += 1
+	if Input.is_action_pressed("jump") and ! is_on_floor() and ! is_falling:
+		jump(jump_force)
+		height_in_the_air += 1
+		
+	if is_on_floor():
+		is_falling = false
+		height_in_the_air = 0
+		
+	if height_in_the_air > jump_max_height and ! is_on_floor():
+		is_falling = true
+		
+	if Input.is_action_just_released("jump") and ! is_on_floor():
+		is_falling = true
+		
+	if velocity.y > coyote_jump_tolerance:
+		is_falling = true
+	print(velocity.y)
 		
 		
 func jump(jump_power):
-	$Jump.play()
 	velocity.y = JUMP_VELOCITY * jump_power
 	
 		
