@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1pilkugbg64k"]
+[gd_scene load_steps=16 format=3 uid="uid://c1pilkugbg64k"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qpfpe"]
 [ext_resource type="PackedScene" uid="uid://b230r0x3lq1uj" path="res://scenes/bg.tscn" id="2_4ce4p"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ur5k5wp2qufo" path="res://scenes/finish.tscn" id="11_hvpfq"]
 [ext_resource type="PackedScene" uid="uid://3lp01l3dbbsv" path="res://scenes/ui_layer.tscn" id="13_uave7"]
 [ext_resource type="PackedScene" uid="uid://oqndiiv1qfvj" path="res://scenes/level_timer.tscn" id="14_5cg8h"]
+[ext_resource type="Texture2D" uid="uid://2dm4sagacy8b" path="res://assets/textures/cloud.png" id="15_fupj2"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qpfpe")
@@ -59,3 +60,37 @@ autoplay = true
 
 [node name="LevelTimer" parent="." instance=ExtResource("14_5cg8h")]
 start_time_in_seconds = 35
+
+[node name="Clouds" type="Node" parent="."]
+
+[node name="Cloud" type="Sprite2D" parent="Clouds"]
+position = Vector2(82, -76)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud2" type="Sprite2D" parent="Clouds"]
+position = Vector2(239, -93)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud3" type="Sprite2D" parent="Clouds"]
+position = Vector2(410, -76)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud4" type="Sprite2D" parent="Clouds"]
+position = Vector2(567, -93)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud5" type="Sprite2D" parent="Clouds"]
+position = Vector2(846, -76)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud6" type="Sprite2D" parent="Clouds"]
+position = Vector2(1003, -93)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud7" type="Sprite2D" parent="Clouds"]
+position = Vector2(1174, -76)
+texture = ExtResource("15_fupj2")
+
+[node name="Cloud8" type="Sprite2D" parent="Clouds"]
+position = Vector2(1331, -93)
+texture = ExtResource("15_fupj2")

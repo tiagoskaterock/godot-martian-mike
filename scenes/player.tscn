@@ -225,7 +225,6 @@ flip_h = true
 sprite_frames = SubResource("SpriteFrames_misqj")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.907701
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_bottom = 150
