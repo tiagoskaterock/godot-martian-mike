@@ -42,7 +42,6 @@ func handle_jump():
 		
 	if velocity.y > coyote_jump_tolerance:
 		is_falling = true
-	print(velocity.y)
 		
 		
 func jump(jump_power):
@@ -91,7 +90,6 @@ func add_gravity(delta):
 
 func back_to_start_position():
 	position = get_parent().get_node("Start").position
-	print(get_parent())
 
 
 func die():

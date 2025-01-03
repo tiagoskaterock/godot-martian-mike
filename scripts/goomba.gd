@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@export var speed : float = 80.0
+@export var speed : float = 50.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,3 +29,9 @@ func handle_horizontal_movement(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.die()
+	
