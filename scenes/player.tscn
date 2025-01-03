@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cblh287h671ue"]
+[gd_scene load_steps=35 format=3 uid="uid://cblh287h671ue"]
 
 [ext_resource type="Texture2D" uid="uid://di5qgjix0hijk" path="res://assets/textures/player/Fall (32x32).png" id="1_r54il"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uikpt"]
@@ -205,6 +205,9 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf3gv"]
+size = Vector2(26, 5)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 126
 script = ExtResource("1_uikpt")
@@ -231,3 +234,13 @@ limit_bottom = 150
 
 [node name="Jump" parent="." instance=ExtResource("6_qc7j4")]
 autoplay = false
+
+[node name="Area2DPlayerAttack" type="Area2D" parent="."]
+collision_layer = 512
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DPlayerAttack"]
+position = Vector2(0, 15.5)
+shape = SubResource("RectangleShape2D_yf3gv")
+
+[connection signal="area_entered" from="Area2DPlayerAttack" to="." method="_on_area_2d_player_attack_area_entered"]

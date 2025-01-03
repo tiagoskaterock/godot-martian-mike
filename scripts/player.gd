@@ -12,6 +12,7 @@ var is_falling : bool = true
 var height_in_the_air : int = 0
 var jump_max_height : int = 13
 const coyote_jump_tolerance : int = 50
+const JUMP_FORCE_WHEN_STOMP_ENEMY : float = .8
 
 func _physics_process(delta):
 	add_gravity(delta)
@@ -112,3 +113,12 @@ func stop():
 	velocity.x = 0
 	$AnimatedSprite2D.play("idle")
 	
+
+
+func _on_area_2d_player_attack_area_entered(area: Area2D) -> void:
+	if Input.is_action_pressed("jump"):
+		$Jump.play()
+		jump(JUMP_FORCE_WHEN_STOMP_ENEMY * 1.5)
+	else:
+		jump(JUMP_FORCE_WHEN_STOMP_ENEMY)
+	#jump(.8)

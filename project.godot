@@ -76,6 +76,8 @@ select={
 2d_physics/layer_6="saw"
 2d_physics/layer_7="start"
 2d_physics/layer_8="enemy"
+2d_physics/layer_9="enemy_stomp"
+2d_physics/layer_10="player_attack"
 
 [rendering]
 
