@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://chqwonmjx1f0p"]
+
+[ext_resource type="AudioStream" uid="uid://c2tqhlixdfbag" path="res://assets/audio/goomba_scream.mp3" id="1_i8s52"]
+[ext_resource type="Script" path="res://scenes/goomba_scream.gd" id="2_7ap2g"]
+
+[node name="GoombaScream" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_i8s52")
+volume_db = -10.503
+pitch_scale = 1.61
+autoplay = true
+script = ExtResource("2_7ap2g")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

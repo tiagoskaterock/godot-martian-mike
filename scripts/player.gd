@@ -99,7 +99,7 @@ func die():
 	back_to_start_position()
 	
 	
-func scream():	
+func scream():
 	var scream = preload("res://scenes/scream.tscn").instantiate()
 	get_parent().add_child(scream)
 	
@@ -121,4 +121,5 @@ func _on_area_2d_player_attack_area_entered(area: Area2D) -> void:
 		jump(JUMP_FORCE_WHEN_STOMP_ENEMY * 1.5)
 	else:
 		jump(JUMP_FORCE_WHEN_STOMP_ENEMY)
-	#jump(.8)
+	area.get_parent().die()
+	

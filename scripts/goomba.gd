@@ -30,8 +30,13 @@ func handle_horizontal_movement(delta):
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
+		
+		
+func die():
+	var scream = preload("res://scenes/goomba_scream.tscn").instantiate()
+	get_parent().add_child(scream)
+	queue_free()
 	

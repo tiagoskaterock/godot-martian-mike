@@ -58,7 +58,6 @@ collision_layer = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DAttack"]
 position = Vector2(7.49315e-07, 5.00001)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_md2pb")
 
 [node name="Area2DStomp" type="Area2D" parent="."]
