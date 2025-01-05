@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 class_name Player
 
-const SPEED : float = 200.0
+const SPEED : float = 20.0
+const MAX_SPEED : float = 200
 const JUMP_VELOCITY : float = -300.0
+var deceleration : int = 10
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move : bool = true
@@ -16,6 +18,7 @@ const JUMP_FORCE_WHEN_STOMP_ENEMY : float = .8
 
 func _physics_process(delta):
 	add_gravity(delta)
+
 	if can_move:
 		handle_jump()
 		handle_direction()
@@ -49,15 +52,27 @@ func jump(jump_power):
 	velocity.y = JUMP_VELOCITY * jump_power
 	
 		
-func handle_direction():		
+func handle_direction():
 	var direction = Input.get_axis("left", "right")
+	
+	# acceleration when player moves
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x += direction * SPEED
+		if velocity.x < -MAX_SPEED:
+			velocity.x = -MAX_SPEED
+		if velocity.x > MAX_SPEED:
+			velocity.x = MAX_SPEED
+	# deceleration when player does not move
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if velocity.x > 0:
+			velocity.x -= deceleration
+		if velocity.x < 0:
+			velocity.x += deceleration
+		if velocity.x < deceleration and velocity.x > -deceleration:
+			velocity.x = 0 
+	
 	set_sprite_direction(direction)	
 	set_sprite_animation(direction)
-
 
 func set_sprite_animation(direction) -> void:
 	# on floor
@@ -113,7 +128,6 @@ func stop():
 	velocity.x = 0
 	$AnimatedSprite2D.play("idle")
 	
-
 
 func _on_area_2d_player_attack_area_entered(area: Area2D) -> void:
 	if Input.is_action_pressed("jump"):
