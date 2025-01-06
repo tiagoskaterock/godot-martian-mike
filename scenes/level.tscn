@@ -46,7 +46,7 @@ autoplay = true
 [node name="UILayer" parent="." instance=ExtResource("13_uave7")]
 
 [node name="LevelTimer" parent="." instance=ExtResource("14_5cg8h")]
-start_time_in_seconds = 35
+start_time_in_seconds = 300
 
 [node name="Clouds" type="Node" parent="."]
 

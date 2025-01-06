@@ -5,7 +5,7 @@ class_name Player
 const SPEED : float = 20.0
 const MAX_SPEED : float = 200
 const JUMP_VELOCITY : float = -300.0
-var deceleration : int = 10
+var deceleration : int = 20
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_move : bool = true
@@ -57,17 +57,31 @@ func handle_direction():
 	
 	# acceleration when player moves
 	if direction:
-		velocity.x += direction * SPEED
+		if is_on_floor():
+			velocity.x += direction * SPEED
+		else:
+			velocity.x += direction * SPEED / 2
+			
 		if velocity.x < -MAX_SPEED:
 			velocity.x = -MAX_SPEED
 		if velocity.x > MAX_SPEED:
 			velocity.x = MAX_SPEED
 	# deceleration when player does not move
 	else:
-		if velocity.x > 0:
+		# to right oh floor
+		if velocity.x > 0 and is_on_floor():
 			velocity.x -= deceleration
-		if velocity.x < 0:
+		# to right off the floor
+		elif velocity.x > 0 and ! is_on_floor():
+			velocity.x -= deceleration / 2
+			
+		# to left on floor
+		if velocity.x < 0 and is_on_floor():
 			velocity.x += deceleration
+		# to left off the floor
+		elif velocity.x < 0 and ! is_on_floor():
+			velocity.x += deceleration
+			
 		if velocity.x < deceleration and velocity.x > -deceleration:
 			velocity.x = 0 
 	
