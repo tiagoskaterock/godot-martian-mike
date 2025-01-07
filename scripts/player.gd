@@ -13,11 +13,18 @@ var jump_force : float = .8
 var is_falling : bool = true
 var height_in_the_air : int = 0
 var jump_max_height : int = 13
+var can_jump : bool = true
 const coyote_jump_tolerance : int = 50
 const JUMP_FORCE_WHEN_STOMP_ENEMY : float = .8
 
 func _physics_process(delta):
 	add_gravity(delta)
+
+	if velocity.y > 10:
+		can_jump = false
+
+	if ! Input.is_action_pressed("jump"):
+		can_jump = true
 
 	if can_move:
 		handle_jump()
@@ -26,6 +33,13 @@ func _physics_process(delta):
 	
 
 func handle_jump():
+	
+	if ! can_jump: 
+		return
+	
+	if is_on_ceiling():
+		is_falling = true
+	
 	if Input.is_action_pressed("jump") and is_on_floor() and ! is_falling:
 		$Jump.play()
 		jump(jump_force)
@@ -68,18 +82,12 @@ func handle_direction():
 			velocity.x = MAX_SPEED
 	# deceleration when player does not move
 	else:
-		# to right oh floor
-		if velocity.x > 0 and is_on_floor():
+		# to right
+		if velocity.x > 0:
 			velocity.x -= deceleration
-		# to right off the floor
-		elif velocity.x > 0 and ! is_on_floor():
-			velocity.x -= deceleration / 2
 			
-		# to left on floor
-		if velocity.x < 0 and is_on_floor():
-			velocity.x += deceleration
-		# to left off the floor
-		elif velocity.x < 0 and ! is_on_floor():
+		# to left
+		if velocity.x < 0:
 			velocity.x += deceleration
 			
 		if velocity.x < deceleration and velocity.x > -deceleration:
@@ -87,6 +95,7 @@ func handle_direction():
 	
 	set_sprite_direction(direction)	
 	set_sprite_animation(direction)
+
 
 func set_sprite_animation(direction) -> void:
 	# on floor
