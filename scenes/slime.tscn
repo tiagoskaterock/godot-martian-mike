@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://4166st087i3l"]
+[gd_scene load_steps=10 format=3 uid="uid://4166st087i3l"]
 
 [ext_resource type="Script" path="res://scripts/slime.gd" id="1_jxtud"]
 [ext_resource type="Texture2D" uid="uid://56y5s32iguve" path="res://assets/textures/slime/slime1.png" id="2_y0sun"]
@@ -32,6 +32,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwqxw"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fmvi"]
+
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 128
 collision_mask = 2
@@ -45,3 +47,12 @@ frame_progress = 0.555956
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_kwqxw")
+
+[node name="Area2DAttackPlayer" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2DAttackPlayer"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_6fmvi")
+
+[connection signal="body_entered" from="Area2DAttackPlayer" to="." method="_on_area_2d_attack_player_body_entered"]
