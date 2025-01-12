@@ -1,9 +1,8 @@
-[gd_scene load_steps=35 format=3 uid="uid://cblh287h671ue"]
+[gd_scene load_steps=34 format=3 uid="uid://cblh287h671ue"]
 
 [ext_resource type="Texture2D" uid="uid://di5qgjix0hijk" path="res://assets/textures/player/Fall (32x32).png" id="1_r54il"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_uikpt"]
 [ext_resource type="Texture2D" uid="uid://b7s22auyaf4ot" path="res://assets/textures/player/Idle (32x32).png" id="2_e5g3j"]
-[ext_resource type="Texture2D" uid="uid://byioaivitklj7" path="res://assets/textures/valeria.png" id="2_jvb1w"]
 [ext_resource type="Texture2D" uid="uid://dme84p3ixbtn2" path="res://assets/textures/player/Jump (32x32).png" id="3_3cxs8"]
 [ext_resource type="Texture2D" uid="uid://c4i0o5y8cxwkt" path="res://assets/textures/player/Run (32x32).png" id="4_kgc7p"]
 [ext_resource type="PackedScene" uid="uid://rfayflmrkkxg" path="res://scenes/jump.tscn" id="6_qc7j4"]
@@ -216,13 +215,6 @@ metadata/_edit_vertical_guides_ = []
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_rmbeh")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(-1.5, 5)
-scale = Vector2(0.0305556, 0.0305556)
-texture = ExtResource("2_jvb1w")
-flip_h = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_misqj")

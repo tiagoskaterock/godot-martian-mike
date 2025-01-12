@@ -116,10 +116,8 @@ func set_sprite_animation(direction) -> void:
 func set_sprite_direction(direction):
 	if direction == 1:
 		$AnimatedSprite2D.flip_h = false
-		$Sprite2D.flip_h = true
 	if direction == -1:
 		$AnimatedSprite2D.flip_h = true
-		$Sprite2D.flip_h = false
 
 
 func add_gravity(delta):

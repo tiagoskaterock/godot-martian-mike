@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h6tw0e8hkysw"
-path="res://.godot/imported/keila.png-84f0091d17082c8b2734badb3103cc8a.ctex"
+uid="uid://d0jotqoicw0jt"
+path="res://.godot/imported/Grassy_Mountains_preview_fullcolor.png-079e7bd44de4adb75c53d7bab9111a02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/keila.png"
-dest_files=["res://.godot/imported/keila.png-84f0091d17082c8b2734badb3103cc8a.ctex"]
+source_file="res://assets/textures/Grassy_Mountains_Parallax_Background-vnitti/Grassy_Mountains_preview_fullcolor.png"
+dest_files=["res://.godot/imported/Grassy_Mountains_preview_fullcolor.png-079e7bd44de4adb75c53d7bab9111a02.ctex"]
 
 [params]
 

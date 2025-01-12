@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byioaivitklj7"
-path="res://.godot/imported/valeria.png-659d686942470c29139c3861b10721a9.ctex"
+uid="uid://6wqvvtk2ps4r"
+path="res://.godot/imported/clouds_front_t_fc.png-ff8cb77cb075bb4e85089ee11b8d8fdb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/valeria.png"
-dest_files=["res://.godot/imported/valeria.png-659d686942470c29139c3861b10721a9.ctex"]
+source_file="res://assets/textures/Grassy_Mountains_Parallax_Background-vnitti/layers_fullcolor/clouds_front_t_fc.png"
+dest_files=["res://.godot/imported/clouds_front_t_fc.png-ff8cb77cb075bb4e85089ee11b8d8fdb.ctex"]
 
 [params]
 
