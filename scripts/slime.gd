@@ -31,3 +31,11 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_attack_player_body_entered(body: Node2D) -> void:
 	if body is Player:
 		body.die()
+
+
+func _on_area_2d_stomp_area_entered(area: Area2D) -> void:
+	print(area)
+	
+	
+func die():
+	queue_free()
