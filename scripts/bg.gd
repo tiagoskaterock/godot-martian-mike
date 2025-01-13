@@ -11,6 +11,7 @@ func  _ready():
 
 
 func _process(delta):
+	return
 	sprite.region_rect.position += delta * Vector2(scroll_speed, scroll_speed)
 	if sprite.region_rect.position >= Vector2(64, 64):
 		sprite.region_rect.position = Vector2(0, 0)
