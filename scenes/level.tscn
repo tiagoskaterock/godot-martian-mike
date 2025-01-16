@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1pilkugbg64k"]
+[gd_scene load_steps=18 format=3 uid="uid://c1pilkugbg64k"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_qpfpe"]
 [ext_resource type="PackedScene" uid="uid://cblh287h671ue" path="res://scenes/player.tscn" id="2_5tiiv"]
@@ -11,9 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://ckqmlbje4do5u" path="res://assets/textures/mountains/sky.png" id="13_lt7go"]
 [ext_resource type="PackedScene" uid="uid://3lp01l3dbbsv" path="res://scenes/ui_layer.tscn" id="13_uave7"]
 [ext_resource type="PackedScene" uid="uid://oqndiiv1qfvj" path="res://scenes/level_timer.tscn" id="14_5cg8h"]
+[ext_resource type="Texture2D" uid="uid://baavr3uu2r8o6" path="res://assets/textures/mountains/clouds_mid.png" id="14_q18ar"]
 [ext_resource type="Texture2D" uid="uid://bhdhboebbwke4" path="res://assets/textures/mountains/far_mountains.png" id="14_u0igm"]
+[ext_resource type="Texture2D" uid="uid://doveg41e4ommy" path="res://assets/textures/mountains/grassy_mountains.png" id="15_3vkvj"]
 [ext_resource type="PackedScene" uid="uid://be6viqivpy3sa" path="res://scenes/goomba.tscn" id="15_k143n"]
 [ext_resource type="PackedScene" uid="uid://4166st087i3l" path="res://scenes/slime.tscn" id="15_u4gf3"]
+[ext_resource type="Texture2D" uid="uid://c6udqflcfmmho" path="res://assets/textures/mountains/hill.png" id="16_ht071"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qpfpe")
@@ -84,6 +87,15 @@ motion_mirroring = Vector2(192, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SkyLayer"]
 texture = ExtResource("13_lt7go")
 
+[node name="BackCloudsLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(18, -40)
+scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.02, 0.02)
+motion_mirroring = Vector2(230, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/BackCloudsLayer"]
+texture = ExtResource("14_q18ar")
+
 [node name="FarMountainsLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(317, 124)
 scale = Vector2(2, 2)
@@ -91,3 +103,19 @@ motion_scale = Vector2(0.05, 0.05)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/FarMountainsLayer"]
 texture = ExtResource("14_u0igm")
+
+[node name="GrassyMountainsLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(317, 124)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.07, 0.07)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/GrassyMountainsLayer"]
+texture = ExtResource("15_3vkvj")
+
+[node name="HillLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(291, 66)
+scale = Vector2(2, 2)
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/HillLayer"]
+texture = ExtResource("16_ht071")
